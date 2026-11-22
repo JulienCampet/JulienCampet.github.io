@@ -3,14 +3,38 @@
    Tout ce qui est propre au site est ici : modifie ce fichier plutôt que le thème.
    ========================================================================== */
 
-/* Couleur d'accent : un bleu encre, sobre. Change ces deux valeurs pour tout recolorer. */
+/* Couleurs du site, une palette par thème.
+   Contrastes vérifiés (norme WCAG AA : 4,5:1 minimum pour du texte) :
+   - clair : #305CDE sur blanc = 5,7:1
+   - sombre : #A9BEF5 sur #474747 = 5,0:1 (bleu adouci : moins saturé, il ne « vibre » pas sur fond sombre) */
 :root {
-  --jc-accent: #1f3a93;
-  --jc-accent-soft: #e8ecf8;
+  --jc-accent: #305CDE;        /* liens, rubriques, badges */
+  --jc-accent-hover: #2448B0;  /* liens au survol */
+  --jc-accent-soft: #E7EDFC;   /* fonds de badges, exergues */
+  --jc-muted: #6B7178;         /* citations, texte secondaire */
+  --jc-surface: #F6F7F9;       /* fonds d'encadrés */
+
+  /* on aligne aussi les liens du thème (barre latérale, pied de page…) */
+  --global-link-color: var(--jc-accent);
+  --global-link-color-hover: var(--jc-accent-hover);
+  --global-link-color-visited: var(--jc-accent);
+}
+
+html[data-theme="dark"] {
+  --jc-accent: #A9BEF5;
+  --jc-accent-hover: #C9D6FA;
+  --jc-accent-soft: #3B4258;
+  --jc-muted: #C8CACC;
+  --jc-surface: #3D3D3D;
+
+  --global-link-color: var(--jc-accent);
+  --global-link-color-hover: var(--jc-accent-hover);
+  --global-link-color-visited: var(--jc-accent);
 }
 
 a { color: var(--jc-accent); }
-a:hover { color: #0f1f5c; }
+a:visited { color: var(--jc-accent); }
+a:hover { color: var(--jc-accent-hover); }
 
 /* --- Listes de productions (le clin d'œil « liste de publications ») --- */
 .page__content {
@@ -69,7 +93,7 @@ a:hover { color: #0f1f5c; }
   }
 
   .production__citation {
-    color: #7d8389;
+    color: var(--jc-muted);
     font-family: Georgia, "Times New Roman", serif;
     font-style: normal;
   }
@@ -102,7 +126,7 @@ a:hover { color: #0f1f5c; }
   .article-figure--narrow img { max-width: 420px; }
   .article-figure--right { float: right; width: 240px; margin: .3em 0 1em 1.5em; }
   .article-exergue { border-left: 4px solid var(--jc-accent); background: var(--jc-accent-soft); font-size: 1.1em; font-style: italic; padding: .8em 1.2em; margin: 2em 0; }
-  .article-encadre { background: #f6f7f9; border-radius: 4px; padding: 1em 1.2em; font-size: .9em; margin: 2em 0 1.5em; }
+  .article-encadre { background: var(--jc-surface); border-radius: 4px; padding: 1em 1.2em; font-size: .9em; margin: 2em 0 1.5em; }
   .article-signature { text-align: right; font-weight: 600; margin-top: 2em; }
   h2 { clear: both; }
 }

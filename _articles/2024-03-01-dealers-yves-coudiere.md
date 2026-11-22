@@ -68,6 +68,7 @@ En plus de ses travaux de chercheur, Yves Coudière est très actif en médiatio
 </div>
 
 **Pour aller plus loin :**
+
 - [Sciences à l’antenne](https://soundcloud.com/radiocampusbx/sciences-a-lantenne-emission-nuit-des-chercheurs-2023)
 - [Inria – Nuit européenne des chercheur·e·s](https://www.inria.fr/fr/nuit-europeenne-chercheures-2022-bordeaux)
 - [Inria – Fête de la science](https://www.inria.fr/fr/fete-science-2021-bordeaux-decouverte-sciences-numerique)
