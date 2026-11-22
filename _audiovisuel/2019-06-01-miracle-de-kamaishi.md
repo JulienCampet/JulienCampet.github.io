@@ -10,7 +10,9 @@ liens:
 - label: Fiche du film
   url: https://productionsdulagon.com/catalogue/le-miracle-de-kamaishi/
 - label: Bande-annonce
-  url: https://viaoccitanie.tv/bande-annonce-du-documentaire-le-miracle-kamaishi/
+  url: https://www.youtube.com/watch?v=KrAlpT9SVno/
+- label: Film
+  url: https://vimeo.com/361809035/de833a8596
 citation: Campet, J. (réal.) (2019). <i>Le Miracle de Kamaishi</i> [documentaire, 52 min]. Les Productions du Lagon.
 ---
 
