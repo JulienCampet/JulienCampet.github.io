@@ -1,0 +1,111 @@
+/* ==========================================================================
+   Personnalisation — Julien Campet
+   Tout ce qui est propre au site est ici : modifie ce fichier plutôt que le thème.
+   ========================================================================== */
+
+/* Couleur d'accent : un bleu encre, sobre. Change ces deux valeurs pour tout recolorer. */
+:root {
+  --jc-accent: #1f3a93;
+  --jc-accent-soft: #e8ecf8;
+}
+
+a { color: var(--jc-accent); }
+a:hover { color: #0f1f5c; }
+
+/* --- Listes de productions (le clin d'œil « liste de publications ») --- */
+.page__content {
+  .production__section {
+    margin-top: 2em;
+    padding-bottom: .3em;
+    border-bottom: 1px solid var(--global-border-color);
+    font-size: 1.15em;
+  }
+
+  .production__list {
+    margin: 1em 0 0 0;
+    padding-left: 2.6em;
+  }
+
+  /* Numérotation à la bibliographie : [5], [4], [3]… */
+  .production__item::marker {
+    content: "[" counter(list-item) "]  ";
+    color: var(--global-text-color-light);
+    font-size: .85em;
+    font-family: Menlo, Consolas, monospace;
+  }
+
+  .production__item {
+    margin-bottom: 1.2em;
+    line-height: 1.45;
+  }
+
+  .production__title {
+    font-weight: 600;
+    a { text-decoration: none; }
+    a:hover { text-decoration: underline; }
+  }
+
+  .production__meta,
+  .production__liens,
+  .production__resume,
+  .production__citation {
+    margin: .15em 0 0 0;
+    font-size: .85em;
+  }
+
+  .production__meta { color: var(--global-text-color-light); }
+  .production__role { color: var(--global-text-color); }
+  .production__sep { margin: 0 .25em; }
+
+  .production__statut {
+    display: inline-block;
+    margin-left: .5em;
+    padding: 0 .5em;
+    border-radius: 3px;
+    background: var(--jc-accent-soft);
+    color: var(--jc-accent);
+    font-size: .85em;
+    font-weight: 600;
+  }
+
+  .production__citation {
+    color: #7d8389;
+    font-family: Georgia, "Times New Roman", serif;
+    font-style: normal;
+  }
+
+  .production__item p { margin-bottom: 0; }
+  .production__liens a { text-decoration: none; border-bottom: 1px solid var(--jc-accent-soft); }
+  .production__liens a:hover { border-bottom-color: var(--jc-accent); }
+}
+
+/* --- Page « Poste actuel » --- */
+.mission {
+  margin: 1.2em 0;
+  padding-left: 1em;
+  border-left: 3px solid var(--jc-accent-soft);
+  h3 { margin: 0 0 .3em 0; font-size: 1em; }
+  p, ul { font-size: .92em; margin-bottom: .3em; }
+}
+
+/* --- Bandeau des articles archivés --- */
+.archive-notice { font-size: .85em; margin-bottom: 2em; }
+
+/* --- Articles restaurés : mise en page éditoriale --- */
+.page__content {
+  .article-chapo { font-size: 1.08em; font-weight: 500; line-height: 1.55; }
+  .article-rubrique { text-transform: uppercase; letter-spacing: .08em; font-size: .75em; font-weight: 700; color: var(--jc-accent); margin-bottom: .3em; }
+  .article-figure { display: block; margin: 1.5em 0; text-align: center;
+    img { max-width: 100%; height: auto; }
+    figcaption { display: block; width: 100%; font-family: inherit; font-size: .75em; color: var(--global-text-color-light); margin-top: .4em; }
+  }
+  .article-figure--narrow img { max-width: 420px; }
+  .article-figure--right { float: right; width: 240px; margin: .3em 0 1em 1.5em; }
+  .article-exergue { border-left: 4px solid var(--jc-accent); background: var(--jc-accent-soft); font-size: 1.1em; font-style: italic; padding: .8em 1.2em; margin: 2em 0; }
+  .article-encadre { background: #f6f7f9; border-radius: 4px; padding: 1em 1.2em; font-size: .9em; margin: 2em 0 1.5em; }
+  .article-signature { text-align: right; font-weight: 600; margin-top: 2em; }
+  h2 { clear: both; }
+}
+@media (max-width: 600px) {
+  .page__content .article-figure--right { float: none; width: auto; margin: 1em 0; }
+}

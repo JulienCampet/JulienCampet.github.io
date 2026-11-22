@@ -1,0 +1,34 @@
+{% comment %}
+  Liste sobre des productions d'une collection, regroupées par section.
+  Paramètres :
+    collection : nom de la collection (articles, evenements, audiovisuel, web)
+  La page appelante définit dans son front matter :
+    sections:
+      - cle: "interviews"      # valeur du champ "categorie" des fiches
+        titre: "Interviews"    # titre affiché
+{% endcomment %}
+{% include base_path %}
+{% assign items = site[include.collection] | sort: "date" | reverse %}
+
+{% for section in page.sections %}
+  {% assign sec_items = items | where: "categorie", section.cle %}
+  {% if sec_items.size > 0 %}
+  <h2 class="production__section">{{ section.titre }}</h2>
+  <ol class="production__list" reversed start="{{ sec_items.size }}">
+    {% for it in sec_items %}
+    <li class="production__item">
+      <span class="production__title">
+        {% if it.page_detail == false and it.liens %}
+          <a href="{{ it.liens[0].url }}" target="_blank" rel="noopener">{{ it.title }}</a>
+        {% else %}
+          <a href="{{ base_path }}{{ it.url }}">{{ it.title }}</a>
+        {% endif %}
+      </span>
+      {% include production-meta.html item=it context="list" %}
+      {% if it.resume %}<p class="production__resume">{{ it.resume }}</p>{% endif %}
+      {% if it.citation %}<p class="production__citation">{{ it.citation }}</p>{% endif %}
+    </li>
+    {% endfor %}
+  </ol>
+  {% endif %}
+{% endfor %}

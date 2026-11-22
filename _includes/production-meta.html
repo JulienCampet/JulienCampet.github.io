@@ -1,0 +1,20 @@
+{% comment %}
+  Ligne de métadonnées d'une production : rôle · cadre · période, + statut éventuel.
+  Utilisé dans les listes (context="list") et sur la page d'une production (context="page").
+{% endcomment %}
+{% assign it = include.item %}
+<p class="production__meta">
+  {% if it.role %}<span class="production__role">{{ it.role }}</span>{% endif %}
+  {% if it.cadre %}<span class="production__sep">·</span> <em>{{ it.cadre }}</em>{% endif %}
+  {% unless it.masquer_date %}<span class="production__sep">·</span>
+  {% if it.periode %}{{ it.periode }}{% else %}{{ it.date | date: "%Y" }}{% endif %}{% endunless %}
+  {% if it.statut %}<span class="production__statut">{{ it.statut }}</span>{% endif %}
+</p>
+{% if it.liens %}
+<p class="production__liens">
+  {% for l in it.liens %}<a href="{{ l.url }}" target="_blank" rel="noopener">{{ l.label }} ↗</a>{% unless forloop.last %} &nbsp;·&nbsp; {% endunless %}{% endfor %}
+</p>
+{% endif %}
+{% if include.context == "page" and it.citation %}
+<p class="production__citation"><strong>Pour citer :</strong> {{ it.citation }}</p>
+{% endif %}

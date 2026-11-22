@@ -1,0 +1,19 @@
+# Menu du haut. L'ordre ici = l'ordre affiché.
+main:
+  - title: "Poste actuel"
+    url: /poste-actuel/
+
+  - title: "Articles & interviews"
+    url: /articles/
+
+  - title: "Événements"
+    url: /evenements/
+
+  - title: "Audiovisuel"
+    url: /audiovisuel/
+
+  - title: "Web"
+    url: /web/
+
+  - title: "CV"
+    url: /cv/

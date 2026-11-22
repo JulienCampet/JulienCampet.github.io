@@ -1,0 +1,10 @@
+{% comment %} Bandeau affiché en haut d'un article republié depuis une archive. {% endcomment %}
+{% if include.item.archive %}
+{% assign a = include.item.archive %}
+<div class="notice--info archive-notice">
+  <strong>Article archivé.</strong>
+  Initialement publié sur <em>{{ a.source_nom }}</em>{% if a.date_publication %} ({{ a.date_publication }}){% endif %}.
+  Le site d'origine n'étant plus accessible, il est reproduit ici à partir de
+  <a href="{{ a.wayback }}" target="_blank" rel="noopener">sa copie sur la Wayback Machine ↗</a>.
+</div>
+{% endif %}
