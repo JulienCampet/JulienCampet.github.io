@@ -7,7 +7,7 @@ redirect_from:
   - /about.html
 ---
 
-Je suis **chargé de communication des départements d'informatique et de mathématiques et applications de l'[École normale supérieure – PSL](https://www.ens.psl.eu/)**. Je travaille au plus près de la science en train de se faire, pour la faire connaître au-delà des laboratoires.
+Je suis **chargé de communication des départements d'informatique ([DIENS](https://www.di.ens.fr/)) et de mathématiques et applications ([DMA]https://www.math.ens.psl.eu/) de l'[École normale supérieure – PSL](https://www.ens.psl.eu/)**. Je travaille au plus près de la science en train de se faire, pour la faire connaître au-delà des laboratoires.
 
 J'y suis arrivé après une quinzaine d'années de **production audiovisuelle, événementielle et web**, en grande partie au sein du collectif bordelais [KloudBox](https://kloudbox.com/). Puis j'ai fait un master en **médiation et communication des sciences et techniques** (Universités de Bordeaux et Bordeaux Montaigne), avec des stages au Centre Inria de l'université de Bordeaux et à Bordeaux Neurocampus.
 
